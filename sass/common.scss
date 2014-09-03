@@ -1,0 +1,6 @@
+$body_bg_color:#fff;
+
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
