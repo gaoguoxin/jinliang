@@ -1,5 +1,15 @@
 $body_bg_color:#fff;
+$bg1:#25a7bf;
+$bg2:#4cc7d9;
 
+$font-32:32px;
+$font-22:22px;
+$font-20:20px;
+$font-16:16px;
+$font-14:14px;
+$font-12:12px;
+
+$black:#333;
 @mixin calc($property, $expression) { 
   #{$property}: -webkit-calc(#{$expression}); 
   #{$property}: calc(#{$expression}); 

@@ -1,6 +1,7 @@
 @import "common";
 @import "compass";
 @import "compass/css3";
+@import "compass/css3/border-radius";
 @import "compass/utilities/general/clearfix";
 @import "index/*.png";
 
@@ -21,23 +22,23 @@ body{
 				margin-bottom: 6px;
 				img{
 					width:100%;
-					height:auto;
 				}
 				.info{
 					position:absolute;
 					text-align: center;
-					@include calc(top, "50% - 23px");
+					@include calc(top, "50% - 31px");
 					left:0px;
 					right:0px;
 					margin-right:auto;
 					margin-right:auto;
 					p{
-						color:#333;;
-						font-size:22px;
+						color:$black;
+						font-size:$font-22;
 						font-weight:bold;
+						font-family:'微软雅黑';
 						&:last-child{
+							font-family:'宋体';
 							font-size:14px;
-							font-weight:normal;
 						}
 					}
 				}
@@ -47,10 +48,13 @@ body{
 				position: relative;
 				margin-bottom: 6px;
 				img{
-					width:100%;
-					@media screen and (max-width:240px){
-						height:260px;
+					width:100%;				
+					@media all and (max-width:320px){
+						height:250px;
 					}
+					@media all and (max-width:240px){
+						height:350px;
+					}												
 				}
 				.info{
 					position:absolute;
@@ -59,8 +63,9 @@ body{
 					padding:5%;
 					height:auto;
 					p{
-						color:#333;
-						font-size:16px;		
+						color:$black;
+						font-size:$font-16;	
+						font-family:'微软雅黑';	
 						line-height:1.5em;	
 						margin:0px;			
 					}
@@ -68,8 +73,8 @@ body{
 						font-weight:bold;
 					}
 					.detail{
-						text-indent: 1em;
-						font-size:12px;
+						text-indent: 2em;
+						font-size:$font-14;
 					}
 
 				}				
@@ -82,18 +87,23 @@ body{
 					width:100%;
 					height:auto;
 					width:100%;
-					@media screen and (max-width:240px){
-						height:260px;
+					@media all and (max-width:360px){
+						height:250px;
+					}						
+					@media all and (max-width:320px){
+						height:220px;
+					}					
+					@media all and (max-width:240px){
+						height:300px;
 					}					
 				}
 				.info{
 					height:auto;
 					position:absolute;
-					@include calc(top, "50% - 100px");
+					@include calc(top, "50% - 100px");							
 					left:0px;
 					width:100%;
-					text-align:center;
-					padding-top:5%;
+					text-align:center;					
 					p{
 						color:#333;
 						font-size:16px;		
@@ -105,14 +115,135 @@ body{
 					}
 					.bread{
 						font-weight:bold;
-						margin-bottom:1em;
+						margin-bottom:.5em;
+						font-size:$font-20;
 					}
 					.detail{
-						text-indent: 1em;
-						font-size:12px;
+						font-size:$font-14;
 					}
 
 				}					
+			}
+			.list{
+				color:$body_bg_color;
+				margin-bottom:6px;
+				span{
+					display:inline-block;
+					width:100%;
+					text-align:center;
+					font-size:20px;
+				}
+				p{
+					margin:0px;
+					font-size:$font-20;
+					line-height: 1.5em;
+				}
+				.plan_1{
+					background:$bg1;
+					border-top-left-radius:10px 40px;
+					border-top-right-radius:10px 40px;
+					padding:5% 3%;
+					span{
+						font-weight:bold;
+						margin-bottom:.5em;
+					}
+					p{
+						color:$body_bg_color;
+						font-size:$font-14;
+						text-align:center;
+						line-height: 1.5em;
+					}
+
+				}
+				.movie{
+					background:$bg2;
+					padding:5% 3%;
+					span{
+						font-size:$font-22;	
+						font-weight:bold;
+						margin-bottom:.5em;
+						line-height: 1.5em;
+					}
+					p{
+						color:$body_bg_color;
+						font-size:$font-14;
+						text-align:center;
+						line-height: 1.5em;
+					}					
+					
+				}
+				.plan_2{
+					background:$bg1;
+					padding:5% 3%;
+					span{
+						font-weight:bold;
+						margin-bottom:.5em;
+					}
+					p{
+						color:$body_bg_color;
+						font-size:$font-14;
+						text-align:center;
+						line-height: 1.5em;
+					}						
+				}
+				.plan_3{
+					background:$bg2;
+					border-bottom-left-radius:10px 40px;
+					border-bottom-right-radius:10px 40px;
+					padding:5% 3%;
+					span{
+						font-weight:bold;
+						margin-bottom:.5em;
+					}
+					p{
+						color:$body_bg_color;
+						font-size:$font-14;
+						text-align:center;
+						line-height: 1.5em;
+					}											
+				}
+			}
+			.recruiting{
+				padding:5% 3%;
+				>span{
+					font-size:$font-32;
+					font-weight:bold;
+					font-family:'微软雅黑';
+					line-height:1.5em;
+
+					&.other{
+						font-size:14px;
+						margin-top:1.5em;
+						text-align:center;
+						font-weight:normal;
+					}
+
+				}
+				p{
+					margin-top:26px;
+					padding:0 10% ;
+					// padding-right:8%;
+					span.lev-1{
+						display:block;
+						line-height:2em;
+						color:$black;
+						span{
+							display:inline-block;
+							&.position{
+								min-width:40%;
+								width:auto;
+							}
+							&.nbsp{
+								width:auto;
+							}
+							&.num{
+								// width:20%;
+								float:right;
+							}								
+						}
+					}					
+				}
+
 			}
 		}
 	}
