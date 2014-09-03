@@ -1,0 +1,79 @@
+@import "compass";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "index/*.png";
+
+$body_bg_color:#fff;
+
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
+
+body{
+	background:$body_bg_color;
+	.content{
+		padding:10px;
+		.card{
+			margin:0px;
+			padding:0px;
+			border:0px;
+			background:transparent;
+			.head{
+				@include border-radius(14px);
+				position: relative;
+				margin-bottom: 10px;
+				img{
+					width:100%;
+				}
+				.info{
+					position:absolute;
+					text-align: center;
+					@include calc(top, "50% - 23px");
+					margin-top:auto;
+					margin-bottom: auto;
+					left:0px;
+					right:0px;
+					margin-right:auto;
+					margin-right:auto;
+					p{
+						color:#333;;
+						font-size:22px;
+						font-weight:bold;
+						&:last-child{
+							font-size:14px;
+							font-weight:normal;
+						}
+					}
+				}
+			}
+			.describe{
+				@include border-radius(14px);
+				position: relative;
+				margin-bottom: 10px;
+				img{
+					width:100%;
+				}
+				.info{
+					position:absolute;
+					top:0px;
+					left:0px;
+					padding:10px;
+					p{
+						color:#333;
+						font-size:22px;		
+						line-height:1.5em;				
+					}
+					.bread{
+						font-weight:bold;
+					}
+					.detail{
+						text-indent: 2em;
+						font-size:14px;
+					}
+
+				}				
+			}
+		}
+	}
+}
