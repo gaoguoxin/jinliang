@@ -1,0 +1,110 @@
+@charset "utf-8"; 
+@import "common";
+@import "compass";
+@import "compass/css3";
+@import "compass/css3/border-radius";
+@import "compass/utilities/general/clearfix";
+@import "login/*.png";
+.content{
+	position:relative;
+	width:100%;
+	height:100%;
+	background:#14afb8;
+	.logo{
+		width:95px;
+		height:89px;
+		margin:15% auto 3%;
+		@include login-sprite(cloth);
+		background-size:cover;	
+		@media (min-width: 43.75em){
+			width: 95px *2.5;
+			font-size: 2.5em;
+			height:89px *2.5;
+			line-height:2.5em;
+		}
+		@media (min-width: 56.25em){
+			width: 95px *3;
+			height:89px *3;	
+			font-size:3em;
+			line-height: 3em;		
+		}
+	}
+	.slogan{
+		width:100%;
+		text-align:center;
+		p{
+			margin:0%;
+			padding:0%;
+			color:$body_bg_color;
+			font-size:1em;
+			font-family: "微软雅黑";
+			&:last-child{
+				font-size:0.75em;
+			}
+		}
+	}
+	.login{
+		padding:0% 15%;
+		margin-top:6%;
+		font-size:1em;
+		form{
+			width:100%;
+		}
+		input{
+			@include border-radius(0px);
+			background:$iptbg;
+			border:1px solid $iptbg;
+			color:$body_bg_color;
+		}
+		.btn-cont{
+			width:100%;
+			margin-top:30px;
+			@media (min-width: 43.75em){
+				margin-top: 30px *2.5;
+			}
+			@media (min-width: 56.25em){
+				margin-top: 30px * 3;		
+			}			
+			text-align:center;
+			button{
+				width:130px;
+				height:32px;
+				margin:0 auto;
+				border:2px solid $btn-border;
+				background:$btn-fill;
+				color:$body_bg_color;
+				margin:0 auto;
+				font-size:1em;
+				@media (min-width: 43.75em){
+					width: 130px *2.5;
+					height:32px *2.5;
+					border:2px *2.5 solid $btn-border;
+				}
+				@media (min-width: 56.25em){
+					width: 130px *3;
+					height:32px *3;	
+					border:2px *3 solid $btn-border;		
+				}
+			}
+		}
+	}
+	.regist{
+		width:100%;
+		text-align:center;
+		margin-top:16.67%;
+		font-size:1em;
+		@media (min-width: 43.75em){
+			font-size: 2.5em;
+		}
+		@media (min-width: 56.25em){
+			font-size:3em;
+		}
+		a{
+			color:$body_bg_color;
+		}		
+	}
+}
+
+
+
+
