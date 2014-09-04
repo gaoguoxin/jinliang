@@ -14,3 +14,9 @@ $black:#333;
   #{$property}: -webkit-calc(#{$expression}); 
   #{$property}: calc(#{$expression}); 
 } 
+
+@mixin one-line($height) {
+	height: $height;
+	line-height: $height;
+	vertical-align: middle;
+}

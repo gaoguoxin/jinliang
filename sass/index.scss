@@ -1,3 +1,4 @@
+@charset "utf-8"; 
 @import "common";
 @import "compass";
 @import "compass/css3";
@@ -35,7 +36,12 @@ body{
 						color:$black;
 						font-size:$font-22;
 						font-weight:bold;
-						font-family:'微软雅黑';
+						font-family:"微软雅黑";
+						&:first-child{
+							span{
+								color:#0ccee6;
+							}
+						}
 						&:last-child{
 							font-family:'宋体';
 							font-size:14px;
@@ -86,7 +92,6 @@ body{
 				img{
 					width:100%;
 					height:auto;
-					width:100%;
 					@media all and (max-width:360px){
 						height:250px;
 					}						
@@ -204,46 +209,180 @@ body{
 				}
 			}
 			.recruiting{
-				padding:5% 3%;
-				>span{
-					font-size:$font-32;
-					font-weight:bold;
-					font-family:'微软雅黑';
-					line-height:1.5em;
+				position:relative;
 
-					&.other{
-						font-size:14px;
-						margin-top:1.5em;
-						text-align:center;
-						font-weight:normal;
-					}
-
-				}
-				p{
-					margin-top:26px;
-					padding:0 10% ;
-					// padding-right:8%;
-					span.lev-1{
-						display:block;
-						line-height:2em;
-						color:$black;
-						span{
-							display:inline-block;
-							&.position{
-								min-width:40%;
-								width:auto;
-							}
-							&.nbsp{
-								width:auto;
-							}
-							&.num{
-								// width:20%;
-								float:right;
-							}								
-						}
+				img{
+					width:100%;
+					@media all and (max-width:540px){
+						height:600px;
+					}	
+					@media all and (max-width:400px){
+						height:660px;
+					}											
+					@media all and (max-width:360px){
+						height:660px;
+					}						
+					@media all and (max-width:320px){
+						height:660px;
+					}					
+					@media all and (max-width:240px){
+						height:660px;
 					}					
 				}
 
+				.info{
+					position:absolute;
+					width:100%;
+					top:0px;
+					left:0px;
+					padding:5% 3%;
+					>span{
+						font-size:$font-32;
+						font-weight:bold;
+						font-family:'微软雅黑';
+						line-height:1.5em;
+	
+						&.other{
+							font-size:14px;
+							margin-top:1.5em;
+							text-align:center;
+							font-weight:normal;
+							display:inline-block;
+							width:100%;
+						}
+	
+					}
+					p{
+						margin-top:26px;
+						padding:0 10% ;
+						// padding-right:8%;
+						span.lev-1{
+							display:block;
+							line-height:2em;
+							color:$black;
+							span{
+								display:inline-block;
+								&.position{
+									min-width:40%;
+									width:auto;
+								}
+								&.nbsp{
+									width:auto;
+								}
+								&.num{
+									// width:20%;
+									float:right;
+								}								
+							}
+						}					
+					}
+
+
+				}
+			}
+			.form{
+				border: 2px solid #ddd;
+				background:$body_bg_color;
+				@include border-radius(10px);				
+				.wrap{
+					width:100%;
+					padding:5% 3%;
+					.form-head{
+						text-align:center;
+						@include one-line(30px);
+						border-bottom:1px solid #ddd;
+						margin-bottom:40px;
+					}
+					ul,li{
+						list-style: none;
+						margin:0px;
+						padding:0px;
+					}
+					li.tabcell{
+						@include one-line(40px);
+						@include clearfix;
+						margin-bottom:20px;
+						position:relative;
+						input{
+							width:66%;
+							float:right;
+						}
+						span{
+							display:inline-block;
+							width:66%;
+							float:right;
+							height: 40px;
+							padding: 10px 15px;
+							border: 1px solid rgba(0,0,0,.2);	
+							border-radius: 3px;
+							outline: 0;	
+							margin-bottom: 15px;
+							line-height: 21px;
+							background-color: #fff;												
+						}
+						i{
+							position:absolute;
+							right:10px;
+							top:18px;
+							width:0;
+							height:0;
+							border-width:4px 4px;
+							border-style:solid;
+							border-color:#666 #f5f5f5 #f5f5f5;
+							font-size:0;
+							line-height:0;
+							-webkit-transition:-webkit-transform .2s ease-in;
+							-webkit-backface-visibility:hidden;
+							-moz-transition:-moz-transform .2s ease-in;
+							-o-transition:-o-transform .2s ease-in;
+							transition:transform .2s ease-in;
+						}
+						ul{
+							display:none;
+						}
+					}
+					.sub-btn{
+						width:100%;
+						text-align:center;
+						button{
+							width:50%;
+						}
+					}
+				}
+				
+				
+
+			}
+		}
+	}
+	#area,#school{
+		.content{
+			.card{
+				.table-view-cell{
+					label{
+						display:inline-block;
+						width:100%;
+						height:100%;
+						input[type='radio']{
+							display:none;
+						}
+						i{
+							display:inline-block;
+							width:22px;
+							height:22px;
+							position:relative;
+							top:5px;
+							margin-right:10px;
+							@include index-sprite(radio);
+							&:hover{
+								@include index-sprite(radio_hover);
+							}
+							&.ok{
+								@include index-sprite(radio_active);
+							} 
+						}
+					}
+				}
 			}
 		}
 	}
