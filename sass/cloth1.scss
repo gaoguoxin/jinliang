@@ -7,16 +7,290 @@
 @import "cloth/*.png";
 
 .content{
+	background:#666;
 	.wrap{
 		background: #ddd;
 		.header{
 			@include one-line(30px);
 			color:$body_bg_color;
 			height:100%;
-			border-bottom:1px solid $btn-border;
-			background:$bg2;
+			border-bottom:1px solid #72cfd5;
+			background:#15afb9;
 			text-align:center;
 			font-size:1em;
+		}
+		.pan{
+			height:242px;
+			width:100%;
+			position:relative;
+			border-bottom:1px solid #5a8a8a;
+			@media (min-width: 33.75em){
+				height:242px *1.6;
+				border-bottom:1.6px solid #5a8a8a;
+			}			
+			@media (min-width: 43.75em){
+				height:242px *2.5;
+				border-bottom:2.5px solid #5a8a8a;
+			}
+			@media (min-width: 56.25em){
+				height:242px *3;
+				border-bottom:3px solid #5a8a8a;		
+			}			
+			.view{
+				height:100%;
+				width:100%;
+				background:$body_bg_color;
+				position:relative;
+				ul{
+					padding:0px;
+					margin:0px;
+					li{
+						list-style:none;
+						margin:0px;
+						height:0px;
+						width:auto;
+						height:auto;
+						text-align:center;
+						display:none;
+						img{
+							width:196px;
+							height:196px;
+							margin:0.5% auto;
+							@media (min-width: 33.75em){
+								height:196px *1.6;
+								width:196px *1.6;
+							}							
+							@media (min-width: 43.75em){
+								height:196px *2.5;
+								width:196px *2.5;
+							}
+							@media (min-width: 56.25em){
+								height:196px *3;
+								width:196px *3;		
+							}								
+						}
+						&:nth-child(2){
+							display:block;
+						}
+					}
+				}
+				.flink{
+					position:absolute;
+					height:110px;
+					width:26px;
+					right:4px;
+					@include calc(top, "50% - 55px - 21px");
+					font-size:1em;
+					font-family:"微软雅黑";
+					border:1px solid #a5a5a5;
+					@include border-radius(10px);
+					.z,.f{
+						height:50%;
+						writing-mode:tb-rl;
+						text-align:center;
+						padding-top:6px;
+					}
+					.z{
+						border-bottom:1px solid #a5a5a5;
+					}
+					span{
+						color:#f00;
+						font-size:0.6em;
+						position:absolute;
+						top:50% -6px;
+					}
+					@media (min-width: 33.75em){
+						height:110px *1.6;
+						width:16px *2;
+						@include calc(top, "50% - 88px - 33.6x");
+						font-size:1.6em;
+						border:1.6px solid #a5a5a5;
+						right:12px;
+						span{
+							font-size:1.6em;
+							top:50% -1.6em;
+						}
+						.z,.f{
+							height:50%;
+							writing-mode:tb-rl;
+							text-align:center;
+							padding-top:6px *1.6;
+							line-height:1.2em;
+						}
+						.z{
+							border-bottom:1.6px solid #a5a5a5;
+						}						
+					}			
+					@media (min-width: 43.75em){
+						height:110px *2.5;
+						width:16px *3;
+						@include calc(top, "50% - 137.5px - 52.5px");
+						font-size:2.5em;
+						border:2.5px solid #a5a5a5;
+						right:12px;
+						span{
+							font-size:2.5em;
+							top:50% -2.5em;
+						}						
+						.z,.f{
+							height:50%;
+							writing-mode:tb-rl;
+							text-align:center;
+							padding-top:6px *2.5;
+							line-height:1.375em;
+
+						}
+						.z{
+							border-bottom:2.5px solid #a5a5a5;
+						}	
+					}
+					@media (min-width: 56.25em){
+						height:110px *3;
+						width:16px *4;
+						@include calc(top, "50% - 165px - 63px");
+						font-size:3em;
+						border:2.5px solid #a5a5a5;
+						right:12px;
+						span{
+							font-size:3em;
+							top:50% -3em;
+						}							
+						.z,.f{
+							height:50%;
+							writing-mode:tb-rl;
+							text-align:center;
+							padding-top:6px *3;
+							line-height:1.25em;
+						}
+						.z{
+							border-bottom:3px solid #a5a5a5;
+						}			
+					}
+				}
+			}
+			.foot{
+				width:100%;
+				height:42px;
+				background:#f3f3f3;
+				position:absolute;
+				left:0;
+				bottom:0;
+				@media (min-width: 33.75em){
+					height:42px *1.6;
+				}	
+				@media (min-width: 43.75em){
+					height:42px *2.5;
+				}
+				@media (min-width: 56.25em){
+					height:42px *3;		
+				}
+				.radio-wrap{
+					padding:0 3.125%;
+					width:100%;
+					text-align:center;
+					@include clearfix;
+					i{
+						display:inline-block;
+						width:20px;
+						height:20px;
+						border:1px solid #f3f3f3;
+						float:left;
+						margin-top:20px;
+						@include border-radius(100px);
+						@media (min-width: 33.75em){
+							height:20px *1.6;
+							width:20px *1.6;
+							border:1.6px solid #f3f3f3;
+							margin-top:20px *1.6;
+						}						
+						@media (min-width: 43.75em){
+							height:20px *2.5;
+							width:20px *2.5;
+							border:2.5px solid #f3f3f3;
+							margin-top:20px *2.5;
+						}
+						@media (min-width: 56.25em){
+							height:20px *3;
+							width:20px *3;
+							border:3px solid #f3f3f3;
+							margin-top:20px *3;
+	
+						}		
+						&:nth-child(even) {
+						 	margin-top:2px;
+							@media (min-width: 33.75em){
+								height:20px *1.6;
+								width:20px *1.6;
+								border:1.6px solid #f3f3f3;
+								margin-top:2px *1.6;
+							}							 	
+							@media (min-width: 43.75em){
+								height:20px *2.5;
+								width:20px *2.5;
+								border:2.5px solid #f3f3f3;
+								margin-top:2px *2.5;
+							}
+							@media (min-width: 56.25em){
+								height:20px *3;
+								width:20px *3;
+								border:3px solid #f3f3f3;
+								margin-top:2px *3;
+							}	
+						}
+						&.c0{
+							background:#000;
+						}
+						&.c1{
+							background:#fff;
+						}
+
+						&.c2{
+							background:#999;
+						}
+						&.c3{
+							background:#fc0;
+						}
+						&.c4{
+							background:#99d02a;
+						}
+						&.c5{
+							background:#f60;
+						}
+						&.c6{
+							background:#063;
+						}
+						&.c7{
+							background:#f00;
+						}
+						&.c8{
+							background:#494a34;
+						}
+						&.c9{
+							background:#b18bbc;
+						}
+						&.c10{
+							background:#00b9c5;
+						}
+						&.c11{
+							background:#ffc1d1;
+						}
+						&.c12{
+							background:#86ace3;
+						}
+						&.c13{
+							background:#6d4432;
+						}
+						&.c14{
+							background:#1942af;
+						}
+						&.active{
+							border-color:#d0d0d0;
+							@include box-shadow(rgba(blue, 0.8) 0 0 15px, rgba(green, 0.8) 0 0 3px 1px inset);
+						}											
+					}
+				}
+					
+			}
 		}
 	}
 }

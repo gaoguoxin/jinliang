@@ -14,11 +14,96 @@
       <div class="wrap">
         <div class="header"><span>Deamer快时尚</span></div>
         <div class="pan">
-          <div class="view"></div>
-          <div class="foot"></div>
+          <div class="view">
+            <ul>
+              <li class='c0'>
+                <img src="images/products/c0.png" class="z">
+                <img src="images/products/c0-0.png" class="f">
+              </li>
+              <li class='c1'>
+                <img src="images/products/c1.png" class="z">
+                <img src="images/products/c1-0.png" class="f">
+              </li>
+              <li class='c2'>
+                <img src="images/products/c2.png" class="z">
+                <img src="images/products/c2-0.png" class="f">
+              </li>
+              <li class='c3'>
+                <img src="images/products/c3.png" class="z">
+                <img src="images/products/c3-0.png" class="f">
+              </li>
+              <li class='c4'>
+                <img src="images/products/c4.png" class="z">
+                <img src="images/products/c4-0.png" class="f">
+              </li>
+              <li class='c5'>
+                <img src="images/products/c5.png" class="z">
+                <img src="images/products/c5-0.png" class="f">
+              </li>
+              <li class='c6'>
+                <img src="images/products/c6.png" class="z">
+                <img src="images/products/c6-0.png" class="f">
+              </li>
+              <li class='c7'>
+               <img src="images/products/c7.png" class="z">
+               <img src="images/products/c7-0.png" class="f">
+              </li>
+              <li class='c8'>
+                <img src="images/products/c8.png" class="z">
+                <img src="images/products/c8-0.png" class="f">
+              </li>
+              <li class='c9'>
+                <img src="images/products/c9.png" class="z">
+                <img src="images/products/c9-0.png" class="f">
+              </li>
+              <li class='c10'>
+                <img src="images/products/c10.png" class="z">
+                <img src="images/products/c10-0.png" class="f">
+              </li>
+              <li class='c11'>
+                <img src="images/products/c11.png" class="z">
+                <img src="images/products/c11-0.png" class="f">
+              </li>
+              <li class='c12'>
+                <img src="images/products/c12.png" class="z">
+                <img src="images/products/c12-0.png" class="f">
+              </li>
+              <li class='c13'>
+                <img src="images/products/c13.png" class="z">
+                <img src="images/products/c13-0.png" class="f">
+              </li>
+              <li class='c14'>
+                <img src="images/products/c14.png" class="z">
+                <img src="images/products/c14-0.png" class="f">
+              </li>
+            </ul>
+            <div class="flink">
+              <div class="z">正面</div>
+              <span>or</span>
+              <div class="f">反面</div>
+            </div>
+          </div>
+          <div class="foot">
+            <div class="radio-wrap">
+              <i class='c0'></i>
+              <i class='c1 active'></i>
+              <i class='c2'></i>
+              <i class='c3'></i>
+              <i class='c4'></i>
+              <i class='c5'></i>
+              <i class='c6'></i>
+              <i class='c7'></i>
+              <i class='c8'></i>
+              <i class='c9'></i>
+              <i class='c10'></i>
+              <i class='c11'></i>
+              <i class='c12'></i>
+              <i class='c13'></i>
+              <i class='c14'></i>
+            </div>            
+          </div>
         </div>
         <div class="tool">
-          
         </div>
         <div class="bootom">
           <div class="wheel">
@@ -33,5 +118,27 @@
     </div>
     <script src="js/ratchet.min.js"></script>
     <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function(){
+      $('.radio-wrap i').on('touchend',function(){
+        var klass = $(this).attr('class');
+        $(this).addClass('active').siblings().removeClass('active');
+        var show_img = $('.view li.' + klass);
+        show_img.show().siblings().hide();
+      })
+
+      $('.z,.f').on('touchend',function(){
+        $(this).addClass('active').siblings().removeClass('active');
+        if($(this).hasClass('z')){
+            visib_img = $('.view li img:visible');
+            var pre_img = visib_img.attr('src');
+           $('.view li img:visible').attr('src') = ;
+        }else{
+
+        }
+      })
+
+    })
+    </script>>
   </body>
 </html>
