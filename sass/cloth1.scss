@@ -23,18 +23,18 @@
 			height:242px;
 			width:100%;
 			position:relative;
-			border-bottom:1px solid #5a8a8a;
+			border-bottom:1px solid #ababab;
 			@media (min-width: 33.75em){
 				height:242px *1.6;
-				border-bottom:1.6px solid #5a8a8a;
+				border-bottom:1px solid #ababab;
 			}			
 			@media (min-width: 43.75em){
 				height:242px *2.5;
-				border-bottom:2.5px solid #5a8a8a;
+				border-bottom:1px solid #ababab;
 			}
 			@media (min-width: 56.25em){
 				height:242px *3;
-				border-bottom:3px solid #5a8a8a;		
+				border-bottom:1px solid #ababab;
 			}			
 			.view{
 				height:100%;
@@ -249,6 +249,150 @@
 					}
 				}
 					
+			}
+		}
+		.tool{
+			width:100%;
+			text-align:center;
+			height:auto;
+			position:relative;
+			@include clearfix;
+			.ks,.ta{
+				height:25px;
+				width:25.625%;
+				display:inline-block;
+				position:absolute;
+				cursor:pointer;
+			}	
+			.ks{
+				left:24.375%;
+			}			
+			.ta{
+				right:24.375%;
+			}
+			img{
+				float:left;
+				width:51.25%;
+				margin:0 24.375%;
+
+			}	
+
+			@media (min-width: 33.75em){
+				height:25px *1.6;
+				.ks,.ta{
+					height:25px *1.6;
+				}				
+			}							
+			@media (min-width: 43.75em){
+				height:25px *2.5;
+				.ks,.ta{
+					height:25px *2.5;
+				}	
+			}
+			@media (min-width: 56.25em){
+				height:25px *3;	
+				.ks,.ta{
+					height:25px *3;
+				}					
+			}
+		}
+		.bootom{
+			position:relative;
+			width:100%;
+			.wheel{
+				position:relative;
+			}
+			ul{
+				@include clearfix;
+				padding: 0px;
+				margin:0px;
+				li{
+					list-style: none;
+					ul{
+						li{
+							float:left;
+							margin-right:4px;
+							margin-bottom:2px;
+							&:nth-child(4n){
+								margin-right:0px;
+							}
+							img{
+								width:77px;
+								height:71px;								
+								@media (width: 320px){
+									width:77px;
+									height:71px;
+								}									
+								@media (width: 360px){
+									width:87px;
+									height:74px;
+								}			
+								@media (width: 384px){
+									width:93px;
+									height:77px;
+								}	
+
+								@media (width: 400px){
+									width:97px;
+									height:92px;
+								}	
+
+								@media (width: 540px){
+									width:132px;
+									height:107px;
+								}									
+
+								@media (width: 720px){
+									width:176px;
+									height:135px;
+								}
+							}
+						}
+					}
+				}
+				&.ta{
+					display:none;
+				}
+			}
+			.nav-bar{
+				position:absolute;
+				@include calc(top, "50% - 10px");
+				&.left{
+					left:0%;
+				}
+				&.right{
+					right:0%;
+				}
+				@media (min-width: 33.75em){
+					@include calc(top, "50% - 16px");			
+				}							
+				@media (min-width: 43.75em){
+					@include calc(top, "50% - 25px");	
+				}
+				@media (min-width: 56.25em){
+					@include calc(top, "50% - 30px");					
+				}
+			}
+		}
+		.btn-cont{
+			@include one-line(32px);
+			background:#fff;
+			.btn{
+				@onclude border-radius(3px);
+				background:#15afb9;
+				font-size:1em;
+				color:#fff;
+				font-family: "微软雅黑";
+				text-align:center;
+				width:33.3%;
+				float:left;
+			}
+			.price{
+				display:inline-block;
+				color:#15afb9;
+				width:33.3%;
+				float:left;
+				text-align:center;
 			}
 		}
 	}

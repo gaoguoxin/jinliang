@@ -104,13 +104,55 @@
           </div>
         </div>
         <div class="tool">
+          <img src="images/cloth/tool.png" alt="">
+          <div class="ks"></div>
+          <div class="ta"></div>
         </div>
         <div class="bootom">
           <div class="wheel">
-            
+            <ul class='ks'>
+              <li>
+                <ul>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                  <li><img src="images/products/p1.png" alt=""></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class='ta'>
+              <li>
+                <ul>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                  <li><img src="images/products/p2.png" alt=""></li>
+                </ul>
+              </li>             
+            </ul>
+            <div class="nav-bar left"><img src="images/cloth/prev-nav.png" ></div>
+            <div class="nav-bar right"><img src="images/cloth/next-nav.png" ></div>
           </div>
           <div class="btn-cont">
-            
+            <span class="btn">上传</span>
+            <span class="btn">立即购买</span>
+            <span class="price">￥70</span>
           </div>
         </div>
 
@@ -165,6 +207,14 @@
         }else{
           $(this).siblings('img').attr('src','images/cloth/t_f.png');
           turn_img('f');
+        }
+      })
+
+      $('.tool div').on('touchend',function(){
+        if($(this).hasClass('ks')){
+          $('.wheel ul.ks').show().siblings('ul').hide();
+        }else{
+          $('.wheel ul.ks').hide().siblings('ul').show();
         }
       })
 
