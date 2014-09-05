@@ -67,7 +67,10 @@
 							@media (min-width: 56.25em){
 								height:196px *3;
 								width:196px *3;		
-							}								
+							}	
+							&.f{
+								display:none;
+							}							
 						}
 						&:nth-child(2){
 							display:block;
@@ -79,92 +82,48 @@
 					height:110px;
 					width:26px;
 					right:4px;
+					//bakcground-image:('images/cloth/t.png');
+					// @include cloth-sprite(t);
+					background-size:100%;
 					@include calc(top, "50% - 55px - 21px");
-					font-size:1em;
-					font-family:"微软雅黑";
-					border:1px solid #a5a5a5;
-					@include border-radius(10px);
 					.z,.f{
+						position:absolute;
 						height:50%;
-						writing-mode:tb-rl;
-						text-align:center;
-						padding-top:6px;
+						width:100%;
 					}
 					.z{
-						border-bottom:1px solid #a5a5a5;
+						top:0px;
 					}
-					span{
-						color:#f00;
-						font-size:0.6em;
-						position:absolute;
-						top:50% -6px;
+					.f{
+						bottom:0px;
 					}
 					@media (min-width: 33.75em){
 						height:110px *1.6;
 						width:16px *2;
 						@include calc(top, "50% - 88px - 33.6x");
-						font-size:1.6em;
-						border:1.6px solid #a5a5a5;
 						right:12px;
-						span{
-							font-size:1.6em;
-							top:50% -1.6em;
-						}
 						.z,.f{
 							height:50%;
-							writing-mode:tb-rl;
-							text-align:center;
-							padding-top:6px *1.6;
-							line-height:1.2em;
-						}
-						.z{
-							border-bottom:1.6px solid #a5a5a5;
-						}						
+						}					
 					}			
 					@media (min-width: 43.75em){
 						height:110px *2.5;
 						width:16px *3;
 						@include calc(top, "50% - 137.5px - 52.5px");
-						font-size:2.5em;
-						border:2.5px solid #a5a5a5;
-						right:12px;
-						span{
-							font-size:2.5em;
-							top:50% -2.5em;
-						}						
+						right:12px;					
 						.z,.f{
 							height:50%;
-							writing-mode:tb-rl;
-							text-align:center;
 							padding-top:6px *2.5;
-							line-height:1.375em;
-
 						}
-						.z{
-							border-bottom:2.5px solid #a5a5a5;
-						}	
 					}
 					@media (min-width: 56.25em){
 						height:110px *3;
 						width:16px *4;
 						@include calc(top, "50% - 165px - 63px");
-						font-size:3em;
-						border:2.5px solid #a5a5a5;
-						right:12px;
-						span{
-							font-size:3em;
-							top:50% -3em;
-						}							
+						right:12px;						
 						.z,.f{
 							height:50%;
-							writing-mode:tb-rl;
-							text-align:center;
-							padding-top:6px *3;
-							line-height:1.25em;
-						}
-						.z{
-							border-bottom:3px solid #a5a5a5;
-						}			
+						}		
 					}
 				}
 			}

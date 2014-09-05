@@ -78,9 +78,9 @@
               </li>
             </ul>
             <div class="flink">
-              <div class="z">正面</div>
-              <span>or</span>
-              <div class="f">反面</div>
+              <img src="images/cloth/t.png" alt="">
+              <div class="z"></div>
+              <div class="f"></div>
             </div>
           </div>
           <div class="foot">
@@ -120,21 +120,51 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(function(){
+
+      var turn_img = function(direct){
+        var z_img = $('.view li:visible').find('img.z');
+        var f_img = z_img.siblings('img');
+        if(direct == 'z'){
+          z_img.show();
+          f_img.hide();
+        }else{
+          z_img.hide();
+          f_img.show();
+        }
+      }
+      var show_img = function(klass){
+        var z_o_f = $('.flink .active');
+        var t_type = 'z';
+        if( z_o_f.length > 0 && z_o_f.hasClass('f') ){
+          t_type = 'f';
+        }
+        var li = $('.view li.' + klass);
+        li.show().siblings().hide();
+        var z_img = li.find('img.z');
+        var f_img = li.find('img.f');
+        if(t_type == 'z'){
+          z_img.show();
+          f_img.hide();
+        }else{        
+          z_img.hide();
+          f_img.show();
+        }
+      }
+
       $('.radio-wrap i').on('touchend',function(){
         var klass = $(this).attr('class');
         $(this).addClass('active').siblings().removeClass('active');
-        var show_img = $('.view li.' + klass);
-        show_img.show().siblings().hide();
+        show_img(klass);
       })
 
       $('.z,.f').on('touchend',function(){
         $(this).addClass('active').siblings().removeClass('active');
         if($(this).hasClass('z')){
-            visib_img = $('.view li img:visible');
-            var pre_img = visib_img.attr('src');
-           $('.view li img:visible').attr('src') = ;
+          $(this).siblings('img').attr('src','images/cloth/t_z.png');
+          turn_img('z');
         }else{
-
+          $(this).siblings('img').attr('src','images/cloth/t_f.png');
+          turn_img('f');
         }
       })
 
